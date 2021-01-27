@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LastUpdated extends StatelessWidget {
   final DateTime dateTime;
@@ -11,9 +12,9 @@ class LastUpdated extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'Update: ${TimeOfDay.fromDateTime(dateTime).format(context)}',
-      style: TextStyle(
+      style: GoogleFonts.lato(
         fontSize: 18,
-        fontWeight: FontWeight.w200,
+        fontWeight: FontWeight.w300,
         color: Colors.white,
       ),
     );

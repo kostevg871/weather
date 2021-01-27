@@ -15,6 +15,8 @@ class Temperature extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Padding(
           padding: EdgeInsets.only(right: 20.0),

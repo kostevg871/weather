@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app_jobs/models/weather_model_city.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'temp.dart';
 
@@ -32,9 +33,9 @@ class CombinedWeatherTemperature extends StatelessWidget {
         Center(
           child: Text(
             weatherData.currentConditions,
-            style: TextStyle(
+            style: GoogleFonts.lato(
               fontSize: 30,
-              fontWeight: FontWeight.w200,
+              fontWeight: FontWeight.w300,
               color: Colors.white,
             ),
           ),

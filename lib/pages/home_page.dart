@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test_app_jobs/bloc/blocs.dart';
 import 'package:flutter_test_app_jobs/widgets/city_selection.dart';
+import 'package:flutter_test_app_jobs/widgets/info_weather.dart';
 import 'package:flutter_test_app_jobs/widgets/last_update.dart';
 import 'package:flutter_test_app_jobs/widgets/widget_all_temp.dart';
 import 'package:flutter_test_app_jobs/widgets/widget_city_name.dart';
@@ -71,23 +72,27 @@ class _HomePageState extends State<HomePage> {
                           child: ListView(
                             children: <Widget>[
                               Padding(
-                                padding: EdgeInsets.only(top: 100.0),
+                                padding: EdgeInsets.only(top: 50.0),
                                 child: Center(
                                   child: CityName(
-                                      city: weather.currentLocationName),
+                                    city: weather.currentLocationName,
+                                  ),
                                 ),
                               ),
                               Center(
                                 child: LastUpdated(dateTime: weather.dt),
                               ),
                               Padding(
-                                padding: EdgeInsets.symmetric(vertical: 50.0),
-                                child: Center(
-                                  child: CombinedWeatherTemperature(
-                                    weatherData: weather,
-                                  ),
+                                padding: EdgeInsets.symmetric(vertical: 20.0),
+                                child: CombinedWeatherTemperature(
+                                  weatherData: weather,
                                 ),
                               ),
+                              Padding(
+                                  padding: EdgeInsets.only(top: 10),
+                                  child: InfoWeather(
+                                    weather: weather,
+                                  )),
                             ],
                           ),
                         ),
