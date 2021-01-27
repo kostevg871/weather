@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app_jobs/models/weather_model_city.dart';
-import 'package:flutter_test_app_jobs/widgets/weather_condition.dart';
 
 import 'temp.dart';
 
@@ -20,11 +19,6 @@ class CombinedWeatherTemperature extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
-                padding: EdgeInsets.all(20.0),
-                child: WeatherConditions(
-                  weatherData: weatherData,
-                )),
             Padding(
               padding: EdgeInsets.all(20.0),
               child: Temperature(

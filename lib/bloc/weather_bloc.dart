@@ -21,8 +21,6 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       yield* _mapEventRequestToState(event);
     } else if (event is WeatherRefresh) {
       yield* _mapEventRefreshRequested(event);
-    } else if (event is LocationInWeather) {
-      yield* _mapEventRefreshLocation(event);
     }
   }
 
@@ -43,17 +41,5 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
           await weatherRepository.getWeatherCity(event.city);
       yield WeatherLoadSuccess(weatherData: weather);
     } catch (_) {}
-  }
-
-  Stream<WeatherState> _mapEventRefreshLocation(
-      LocationInWeather event) async* {
-    yield WeatherLoadInProgress();
-    try {
-      final WeatherDataModel weatherDataModel =
-          await weatherRepository.getWeatherLatAndLon(latitude, longitude);
-      yield WeatherLoadSuccess(weatherData: weatherDataModel);
-    } catch (_) {
-      yield WeatherLoadFailure();
-    }
   }
 }

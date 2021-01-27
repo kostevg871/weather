@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test_app_jobs/bloc/weather_bloc.dart';
-import 'package:flutter_test_app_jobs/pages/weather.dart';
+import 'package:flutter_test_app_jobs/pages/home_page.dart';
 
 import 'repositories/weather_repository.dart';
 
@@ -15,10 +15,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Weather',
       home: BlocProvider(
         create: (context) => WeatherBloc(weatherRepository: weatherRepository),
-        child: Weather(),
+        child: HomePage(),
       ),
     );
   }

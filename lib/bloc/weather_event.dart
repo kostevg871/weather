@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 
 abstract class WeatherEvent extends Equatable {
   const WeatherEvent();
@@ -22,13 +21,4 @@ class WeatherRefresh extends WeatherEvent {
 
   @override
   List<Object> get props => [city];
-}
-
-class LocationInWeather extends WeatherEvent {
-  final Position position;
-
-  LocationInWeather({@required this.position}) : assert(position != null);
-
-  @override
-  List<Object> get props => [position.latitude, position.longitude];
 }
